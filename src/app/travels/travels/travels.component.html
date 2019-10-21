@@ -1,0 +1,46 @@
+<div class="container-fluid mt-5">
+    <div class="class-lg-12">
+            <form>
+                    <div class="form-group text-center">
+                      <input [(ngModel)]='value'  name="travel"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search your Travels">
+                    </div>
+                   
+                    <button (click)='searchTravel()'  type="submit" class="btn btn-primary">Search</button>
+                  </form>
+    </div>
+</div>
+
+<div class="row mt-4" >
+        <div class="col-md-4" 
+        *ngFor="let travel of travels">
+                <div class="card mb-3">
+                        <h1 class="card-title text-center">{{travel.title}}</h1>
+                        <div class="card-body">
+                                <img src="{{travel.image}}" class="card-img-top" alt="{{travel.title}}">
+                         
+                          <h3 class="card-text">{{travel.memory}}</h3>
+                          <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{{travel.date}}</li>
+                                <li class="list-group-item">{{travel.itinerary}}</li>
+                                <li class="list-group-item"> {{travel.buddies}}</li>
+                                
+                              </ul>
+                              <div class="row">
+                              <div class="card-body text-center col-6">
+                                
+                              </div>
+                              <div class="card-body text-center col-6">
+                                  <a href="#" class="card-link">Modify Log</a>
+                              </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                              </div>
+                        </div>
+                       
+                      </div>
+                   
+                      
+        </div>
+
+    </div>

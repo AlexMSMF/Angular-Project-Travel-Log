@@ -1,0 +1,10 @@
+
+
+.land-img {
+    background-image: url("../../../assets/Mapa_mundi_divisiones_blanco.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    filter: grayscale(100%);
+}

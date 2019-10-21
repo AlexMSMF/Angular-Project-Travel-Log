@@ -1,0 +1,75 @@
+
+<div class="row">
+    <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid text-center">
+                        <div class="container">
+                          <h1 class="display-4">Australia</h1>
+                          <h4 *ngIf='checked'>Current Objective: {{text}}</h4>
+                        </div>
+                      </div>
+                    </div>
+    
+    <div class="col-lg-7">
+        <h1>Objectives</h1>
+        <div  class="input-group mb-4">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input type="checkbox" aria-label="Checkbox for following text input" >
+              
+              </div>
+            </div>
+            <input [(ngModel)]='objective1' type="text" class="form-control" aria-label="Text input with checkbox">
+            <button (click)='mainObj()' [ngClass]="[checkButton ? 'btn-success': '']" class="btn ">Current</button>
+          </div>
+
+          <div  class="input-group mb-4">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input   type="checkbox" aria-label="Checkbox for following text input" >
+                </div>
+              </div>
+              <input [(ngModel)]='objective2' type="text" class="form-control" aria-label="Text input with checkbox">
+              <button (click)='mainObj1()' [ngClass]="[checkButton1 ? 'btn-success': '']" class="btn ">Current</button>
+            </div>
+
+            <div  class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input" >
+                  </div>
+                </div>
+                <input [(ngModel)]='objective3' type="text" class="form-control" aria-label="Text input with checkbox">
+                <button (click)='mainObj2()' [ngClass]="[checkButton2 ? 'btn-success': '']" class="btn  ">Current</button>
+              </div>
+            </div>
+            
+
+
+
+    <div class="col-lg-5">
+        <h1>Reminders</h1>
+    <div class="row">
+       
+        <div class="col-lg-9">
+          
+    <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Reminders</span>
+            </div>
+            <textarea [(ngModel)]='textValue' class="form-control" aria-label="Reminder"></textarea>
+          </div>
+        </div>
+          <div class="col-xs-3">
+          <button (click)='addReminder()' type="button" class="btn btn-info">Add Reminder</button>
+        </div>
+        </div>
+    
+        <h4 class='text-center' *ngFor='let text of textAreaContent, let i = index'>
+           <span> {{text}} </span>
+           <button class='btn btn-danger' (click)='textAreaContent.splice(i, 1)'></button>
+        </h4>
+   
+    </div>
+
+</div>
+
